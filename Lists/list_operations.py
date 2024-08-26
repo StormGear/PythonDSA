@@ -21,9 +21,17 @@ animals: list[str] = ["monkey", "dog", "lion", "cat"]
 # add item to the end of a list
 animals.append(1)
 
-print(animals)
+# print(animals)
 
-# print(animals) 
+list1.extend(animals)
+# print(list1)
+
+# print(animals)
+
+name = input()
+print('Hello', name)
+
+
 
 # reverse the list
 animals.reverse()
