@@ -43,7 +43,7 @@ def is_subset3(list1, list2):
 
 
 list1 = [1, 2, 3, 4, 5]
-list2 = [1, 2, 3, ]
+list2 = [1, 2, 3,]
 # print(is_subset(list1, list2))
 print(is_subset3(list1, list2))
 

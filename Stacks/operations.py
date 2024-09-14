@@ -40,6 +40,8 @@ def is_empty():
     else:
         return False
     
+
+    
     
 stack_size =  int(input("Enter the size of the stack: "))   
 while True:
