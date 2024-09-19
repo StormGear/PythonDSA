@@ -77,7 +77,7 @@ class Linked_list:
         new_node = Node(data)
         # check if the linked list is empty
         # if it is the new node becomes the first node
-        if self.head is None:
+        if self.is_empty():
             self.head = new_node
         else:
             # traverse to the last node and add the new node

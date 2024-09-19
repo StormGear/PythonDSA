@@ -36,4 +36,8 @@ s = "racecar"
 t = "carrace"
 # print(sorted(s))
 # print(sorted(t))
-print(soln.isAnagram3(s, t))
+# print(soln.isAnagram3(s, t))
+
+res = [1, 2, 3, 4, 5]
+reversed_res = res[3:0:-1]
+print(reversed_res)
