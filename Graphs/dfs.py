@@ -9,7 +9,7 @@ class Node:
 class DepthFirstSearch:
     # time: O(V+E), V:vertices/nodes and E:edges
     # space: O(logn)
-    # it seems that this implementation starts with the right neighbor nodes first
+    # it seems that this implementation starts with the rightmost neighbor nodes(or rightmost path) first
     def dfs_iteration(self, start_node):
         # LIFO structure
         stack = [start_node]
@@ -26,7 +26,7 @@ class DepthFirstSearch:
                     stack.append(node)
                     node.visited = True
 
-    # it seems that this implementation starts with the left neighbor nodes first
+    # it seems that this implementation starts with the leftmost neighbor nodes(or leftmost path) first
     def dfs_recursion(self, start_node):
         start_node.visited = True
         print(start_node.data, end=" ")
