@@ -41,7 +41,7 @@ class Linked_list:
         else:
             current_node = self.head
             # while head is not empty print the data
-            while current_node is not None:
+            while current_node:
                 print(current_node.data, "--->", end=" ")
                 # go to the next node
                 current_node = current_node.next
@@ -171,6 +171,19 @@ class Linked_list:
             while current_node.next.next is not None:
                 current_node = current_node.next
             current_node.next = None
+
+    def reverse_LL(self, head):
+        """
+        Reverse a linked list
+        """
+        prev = None
+        current = head
+        while current:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        return prev
             
     def delete_by_value(self, x):
         """
@@ -207,6 +220,12 @@ class Linked_list:
                 
 LL1 = Linked_list()
 LL1.add_begin(10)
+LL1.add_end(20)
+LL1.add_end(30)
+LL1.add_end(40)
+LL1.print_LI()
+print("Reversed Linked List")
+LL1.head = LL1.reverse_LL(LL1.head)
 LL1.print_LI()
 # LL1.add_begin(20)
 # LL1.add_begin(30)
