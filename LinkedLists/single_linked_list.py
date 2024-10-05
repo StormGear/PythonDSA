@@ -176,8 +176,7 @@ class Linked_list:
         """
         Reverse a linked list
         """
-        prev = None
-        current = head
+        current, prev = head, None
         while current:
             next_node = current.next
             current.next = prev
