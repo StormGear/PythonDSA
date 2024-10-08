@@ -174,7 +174,7 @@ class Linked_list:
 
     def reverse_LL(self, head):
         """
-        Reverse a linked list
+        Reverse a linked list - Question asked by Google.
         """
         current, prev = head, None
         while current:
