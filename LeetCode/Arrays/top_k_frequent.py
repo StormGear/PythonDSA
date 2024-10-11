@@ -1,5 +1,6 @@
 
 # time: O(n) space: O(n)
+# using bucket sort
 class Solution:
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         count = {}
