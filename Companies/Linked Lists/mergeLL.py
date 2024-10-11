@@ -10,14 +10,14 @@ class ListNode:
 def mergeKLists(lists):
     # Custom comparison function for ListNode to be used in heap
     ListNode.__lt__ = lambda self, other: self.val < other.val
+    ListNode.__str__ = lambda self: str(self.val)
     
     # Create a min heap
     heap = []
     
     # Add the head node of each list into the heap
     for l in lists:
-        if l:
-            heapq.heappush(heap, l)
+        heapq.heappush(heap, l)
     
     # Create a dummy node to simplify the result list construction
     dummy = ListNode()
