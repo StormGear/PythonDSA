@@ -1,8 +1,9 @@
 from collections import Counter
 
 class Solution():
-    # Time: O(nlogn) 
-    # Space: O(n) 
+    """ Time: O(nlogn) 
+     Space: O(n) 
+    """
     def isAnagram1(self, s: str, t: str) -> bool:
         return sorted(s) == sorted(t)
     
