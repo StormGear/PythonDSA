@@ -14,13 +14,13 @@ class BreadthFirstSearch:
         startNode.visited = True
 
         while queue:
-            actualNode = queue.pop(0)
-            print(actualNode.data, end=" ")
+            actual_node = queue.pop(0)
+            print(actual_node.data, end=" ")
 
-            for n in actualNode.adjacency_list:
-                if not n.visited:
-                    queue.append(n)
-                    n.visited = True
+            for node in actual_node.adjacency_list:
+                if not node.visited:
+                    queue.append(node)
+                    node.visited = True
 
 if __name__ == '__main__':
     node1 = Node("A")
@@ -29,10 +29,14 @@ if __name__ == '__main__':
     node4 = Node("D")
     node5 = Node("E")
 
+    # node1.adjacency_list.append(node2)
+    # node1.adjacency_list.append(node3)
+    # node2.adjacency_list.append(node4)
+    # node4.adjacency_list.append(node5)
+
     node1.adjacency_list.append(node2)
     node1.adjacency_list.append(node3)
     node2.adjacency_list.append(node4)
-    node4.adjacency_list.append(node5)
 
     bfs = BreadthFirstSearch()
     bfs.bfs(node1)
