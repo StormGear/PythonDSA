@@ -1,7 +1,8 @@
 
 # This problem was asked by Google.
 # Daily Coding Problem: Problem #83 [Medium]
-# 
+# time: O(n), where n is the number of nodes
+# space: O(n) 
 class TreeNode:
     def __init__(self, value):
         self.value = value
