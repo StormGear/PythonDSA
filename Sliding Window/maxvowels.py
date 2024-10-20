@@ -3,7 +3,7 @@
 # s: string
 # k: window size
 
-
+# time: O(n)
 def max_vowel(s: str, k: int) -> int:
     if (len(s)) < k:
         return 0
