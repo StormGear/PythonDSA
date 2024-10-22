@@ -1,0 +1,27 @@
+flowchart TD
+    A["lcs('bd', 'abcd')"] --> B["lcs('d', 'abcd')"]
+    A --> C["lcs('bd', 'bcd')"]
+    
+    B --> D["lcs('', 'abcd')"]
+    B --> E["lcs('d', 'bcd')"]
+    
+    E --> F["lcs('', 'bcd')"]
+    E --> G["lcs('d', 'cd')"]
+    
+    G --> H["lcs('', 'cd')"]
+    G --> I["lcs('d', 'd')"]
+    
+    I --> J["lcs('', 'd')"]
+    
+    C --> K["lcs('d', 'bcd')"]
+    C --> L["lcs('bd', 'cd')"]
+    
+    K --> M["lcs('', 'bcd')"]
+    K --> N["lcs('d', 'cd')"]
+    
+    style J,D,F,H,M fill:#FFB6C1
+    style I fill:#98FB98,stroke:#228B22,stroke-width:2px
+    
+    classDef default fill:#fff,stroke:#333,stroke-width:2px; 
+
+
