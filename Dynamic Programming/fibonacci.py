@@ -24,12 +24,11 @@ def fibonacci2(n):
     return arr[n] # 5. Extract Solution
 
 # fibonacci sequence with memoization
-def fibonacci3(n):
-    memo = {0: 0, 1: 1}
+def fibonacci3(n, memo={}):
     if n in memo:
         return memo[n]
     else:
-        memo[n] = fibonacci3(n-1) + fibonacci3(n-2)
+        memo[n] = fibonacci3(n-1, memo) + fibonacci3(n-2, memo)
         return memo[n]
 
 
@@ -37,4 +36,5 @@ def fibonacci3(n):
 # Example usage:
 if __name__ == "__main__":
     n = 10  # Change this value to compute a different Fibonacci number
-    print(f"Memoization dictionary after calculating Fibonacci({n}): {fibonacci3(n)}")
+    memo = {0: 0, 1: 1}
+    print(f"Memoization dictionary after calculating Fibonacci({n}): {fibonacci3(n, memo)}")

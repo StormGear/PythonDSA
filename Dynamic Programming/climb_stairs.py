@@ -1,16 +1,13 @@
 class Solution:
-    memo = {1:1, 2:2}
-    def climbStairs(self, n: int) -> int:
+    def climbStairs(self, n: int, memo={}) -> int:
         # use memoization
         # time complexity: O(n)
         # space complexity: O(n)
-
-
-        if n in self.memo:
-            return self.memo[n]
+        if n in memo:
+            return memo[n]
         else:
-            self.memo[n] = self.climbStairs(n-1) + self.climbStairs(n-2)
-            return self.memo[n]
+            memo[n] = self.climbStairs(n-1, memo) + self.climbStairs(n-2, memo)
+            return memo[n]
 
     def climbStairs2(self, n: int) -> int:
         # use tabulation
@@ -28,7 +25,8 @@ class Solution:
         return arr[n-1] # 5. Extract Solution
     
 if __name__ == "__main__":
-    n = 10  # Change this value to compute a different Fibonacci numberd
-    for i in range(1, n+1):
-        print(f"Memoization dictionary after calculating climbStairs({i}): {Solution().climbStairs(i)}")
-        print(f"Tabulation array after calculating climbStairs({i}): {Solution().climbStairs2(i)}")
+    n = 10  # Change this value to compute a different Fibonacci number
+    memo = {1:1, 2:2}
+    soln = Solution()
+    print(f"Memoization dictionary after calculating climbStairs({n}): {soln.climbStairs(n, memo)}")
+    # print(f"Tabulation array after calculating climbStairs({i}): {Solution().climbStairs2(i)}")
