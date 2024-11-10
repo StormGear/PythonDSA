@@ -1,6 +1,8 @@
 
 
 class Solution:
+    # Time complexity: O(nlogn)
+    # Space complexity: O(1)
     def remove_overlap_intervals(self,intervals: list[int]) -> int:
         if len(intervals) <= 1:
             return 0
