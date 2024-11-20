@@ -41,7 +41,7 @@ class MaxHeap:
         self.heap_size -= 1
 
         # fix down the root element an operation called heapify
-        self.fix_down(0)
+        self.bubble_down(0)
 
         return max_item
     
@@ -49,7 +49,7 @@ class MaxHeap:
     # Starting from the root node, we compare the root node with its children
     # and swap the root node with the largest child 
     # time complexity: O(logN)
-    def fix_down(self, index):
+    def bubble_down(self, index):
         index_left = 2 * index + 1
         index_right = 2 * index + 2
 
@@ -68,7 +68,7 @@ class MaxHeap:
         # terminate if the parent is the largest
         if index != index_largest:
             self.heap[index], self.heap[index_largest] = self.heap[index_largest], self.heap[index]
-            self.fix_down(index_largest)
+            self.bubble_down(index_largest)
 
     def heap_sort(self):
         # swap the root with the last element in the heap
@@ -91,10 +91,10 @@ class MinHeap:
         self.heap_size += 1
 
         # check the heap property/heap invariant
-        self.fix_up(self.heap_size - 1)
+        self.bubble_up(self.heap_size - 1)
 
     # time complexity: O(logN)
-    def fix_up(self, index):
+    def bubble_up(self, index):
         parent_index = (index - 1) // 2
 
         # while the index > 0 means we are not at the root of the heap
@@ -102,12 +102,12 @@ class MinHeap:
         # so we need to fix it by swapping the item with the parent
         if index > 0 and self.heap[index] < self.heap[parent_index]:
             self.heap[index], self.heap[parent_index] = self.heap[parent_index], self.heap[index]
-            self.fix_up(parent_index)
+            self.bubble_up(parent_index)
 
     def get_min(self):
         return self.heap[0]
     
-    # return and removes the root node
+    # removes and returns the root node
     def poll(self):
         max_item = self.get_min()
 
@@ -116,7 +116,7 @@ class MinHeap:
         self.heap_size -= 1
 
         # fix down the root element an operation called heapify
-        self.fix_down(0)
+        self.bubble_down(0)
 
         return max_item
     
@@ -124,7 +124,7 @@ class MinHeap:
     # Starting from the root node, we compare the root node with its children
     # and swap the root node with the largest child 
     # time complexity: O(logN)
-    def fix_down(self, index):
+    def bubble_down(self, index):
         index_left = 2 * index + 1
         index_right = 2 * index + 2
 
@@ -143,7 +143,7 @@ class MinHeap:
         # terminate if the parent is the largest
         if index != index_largest:
             self.heap[index], self.heap[index_largest] = self.heap[index_largest], self.heap[index]
-            self.fix_down(index_largest)
+            self.bubble_down(index_largest)
 
     def heap_sort(self):
         # swap the root with the last element in the heap
