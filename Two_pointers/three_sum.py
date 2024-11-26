@@ -23,8 +23,8 @@ class Solution:
     def threeSum2(self, nums: list[int]) -> list[list[int]]:
         res = []
         nums.sort()
-        count = 0  
-        count_2 = 0
+ 
+
         for index, ele in enumerate(nums):
            
             # If the current element is positive, any triplet including it will have a positive sum
@@ -38,7 +38,6 @@ class Solution:
 
             l, r = index + 1, len(nums) - 1
             while l < r:
-                count += 1  # Increment the counter
                 threeSum = ele + nums[l] + nums[r]
                 if threeSum > 0:
                     r -= 1
@@ -50,10 +49,7 @@ class Solution:
                     r -= 1
                     # avoid duplicates
                     while nums[l] == nums[l - 1] and l < r:
-                        l += 1
-
-        print('Iteration count:', count)   
-        print('Iteration count 2:', count_2)      
+                        l += 1  
         return res
     
 if __name__ == "__main__":
