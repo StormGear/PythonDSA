@@ -31,7 +31,7 @@ class Solution:
             if ele > 0:
                 break
             
-            # avoid duplicates
+            # avoid duplicates for the first element in the three sum
             if index > 0 and ele == nums[index - 1]:
                 continue
        
