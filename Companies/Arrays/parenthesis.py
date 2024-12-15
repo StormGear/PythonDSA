@@ -1,5 +1,7 @@
 # This problem was asked by Google.
 # Daily Coding Problem: Problem #86 [Medium]
+# Time complexity: O(n)
+# Space complexity: O(1)
 def min_removals_to_make_valid(s):
     open_count = 0  # Number of unmatched open parentheses '('
     remove_count = 0  # Number of parentheses to be removed
