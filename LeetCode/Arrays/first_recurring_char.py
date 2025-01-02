@@ -43,8 +43,9 @@ string2 = "BCABA"
 
 # print(first_recurring_char2(string2))
 
-print(first_nonrecurring1(string1))
-print(first_nonrecurring1(string2))
+# print(first_nonrecurring1(string1))
+# print(first_nonrecurring1(string2))
 
-print(first_nonrecurring2(string1))
+# print(first_nonrecurring2(string1))
 print(first_nonrecurring2(string2))
+print(first_recurring_char2("DBCABA"))
