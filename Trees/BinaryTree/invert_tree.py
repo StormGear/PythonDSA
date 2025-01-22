@@ -8,8 +8,7 @@ class Solution:
     def invert_tree(self, root):
         if root is None:
             return None
-        root.left = self.invert_tree(root.right)
-        root.right = self.invert_tree(root.left)
+        root.left, root.right = self.invert_tree(root.right), self.invert_tree(root.left)
         return root
     
     def print_tree(self, root):

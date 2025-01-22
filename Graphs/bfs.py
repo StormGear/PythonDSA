@@ -15,6 +15,7 @@ class BreadthFirstSearch:
 
         while queue:
             actual_node = queue.pop(0)
+            # process this node
             print(actual_node.data, end=" ")
 
             for node in actual_node.adjacency_list:

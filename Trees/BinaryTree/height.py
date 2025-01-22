@@ -5,7 +5,7 @@ class TreeNode:
         self.right = right
 
 def height(node):
-    if node is None:
+    if not node:
         return -1
     else:
         left_height = height(node.left)

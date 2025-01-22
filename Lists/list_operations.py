@@ -8,7 +8,7 @@ list1[2] = 3.7
 # insert a new element
 list1.insert(2, "hello") 
 
-# print(list1)
+print(list1)
 
 animals: list[str] = ["monkey", "dog", "lion", "cat", "elephant", "giraffe"] 
 
@@ -45,11 +45,11 @@ del animals[1]
 print(animals)
 
 # # user the del keyword to remove the entire list
-del animals
-print(animals)
+# del animals
+# print(animals)
 
 # sort a list in ascending alphabetical order
-# animals.sort()
+animals.sort()
 
 # delete a particular item
 # del animals[2]
@@ -70,8 +70,10 @@ print(animals)
 
 
 # reverse the list
-# animals.reverse()
+animals.reverse()
 
 # list4 = [1, 2, 'Andy', 'great']
 # print(list4.remove('great'))
+# print(animals[::-1])
+print(animals)
 

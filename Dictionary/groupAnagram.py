@@ -8,11 +8,11 @@ class Solution:
             key = "".join(w_sorted)
             groups[key].append(w)
 
-        return groups.values()
+        return list(groups.values())
 
 if __name__ == '__main__':
     soln = Solution()
     res = soln.groupAnagrams(["act","pots","tops","cat","stop","hat"])
-    print(list(res))
+    print(res)
 
 # Output: [["hat"],["act", "cat"],["stop", "pots", "tops"]]
