@@ -7,8 +7,8 @@ class TreeNode:
 class Solution:
     # is t a subtree of s
     def is_subtree(self, s: TreeNode, t: TreeNode) -> bool:
-        if not s: return False
         if not t: return True
+        if not s: return False
 
         if self.is_sametree(s, t):
             return True
@@ -25,7 +25,7 @@ class Solution:
         if p and q and p.value == q.value:
             return True
         
-        return (self.is_sametree(p.left, q.left) and self.is_sametree(p.right, q.left))
+        return (self.is_sametree(p.left, q.left) and self.is_sametree(p.right, q.right))
     
 if __name__ == '__main__':
     tree1 = TreeNode(1)

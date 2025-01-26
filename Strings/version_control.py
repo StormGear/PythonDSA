@@ -43,6 +43,42 @@ def solution(logs: list[str]):
     print(list(branches.items()))
     return max(branches, key=branches.get)
 
+
+# This is the second question
+'''
+Given an array, take consecutive pairs in the array and sort them
+Return an array of the sorted pairs
+In case an array is odd in length, keep the last element intact
+'''
+def solution2(nums: list[int]) -> list[int]:
+    last = float('inf')
+    res = []
+    final =  []
+
+    def sort_nums(nums: list[int]) -> list[list[int]]:
+        i = 0
+        while i < len(nums) - 1:
+            res.append([nums[i], nums[i+1]])
+            i += 2
+        for j in res:
+            j.sort()
+        return res
+
+    if len(nums) % 2 == 0:
+        # handle even len
+        res = sort_nums(nums)
+    else:
+       last = nums[-1]
+       res = sort_nums(nums)
+
+    for i in res:
+        final.extend(i)
+    if last < float('inf'):
+        final.append(last)
+
+
+    return final
+
 if __name__=='__main__':
     logs = [
         'switch branch1',
@@ -61,5 +97,7 @@ if __name__=='__main__':
         'push file3'
     ]
     print('The branch with the max number of files is :' + solution(logs))
+    nums = [10,10,11,8,5,2,8, 1, 12]
+    print('Result ', solution2(nums))
 
 

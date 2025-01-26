@@ -12,7 +12,7 @@ class Solution:
         while curr:
             if p.value > curr.value and q.value > curr.value:
                 curr = curr.right
-            elif p.value > curr.value and q.value > curr.value:
+            elif p.value < curr.value and q.value < curr.value:
                 curr = curr.left
             else:
                 return curr
@@ -20,8 +20,14 @@ class Solution:
 
 if __name__=='__main__':
     soln = Solution()
-    tree1 = TreeNode(1)
-    tree1.left = TreeNode(2)
-    tree1.left.left = TreeNode(4)
-    tree1.right = TreeNode(3)
+            # 10
+           # / \
+          # 6   11
+        #  /
+        # 5
+    tree1 = TreeNode(10)
+    tree1.left = TreeNode(6)
+    tree1.left.left = TreeNode(5)
+    tree1.right = TreeNode(11)
+    print(soln.least_common_ancestor(tree1, TreeNode(6), TreeNode(11)).value)
         

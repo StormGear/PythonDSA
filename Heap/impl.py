@@ -108,7 +108,7 @@ class MinHeap:
         return self.heap[0]
     
     # removes and returns the root node
-    def poll(self):
+    def heappop(self):
         max_item = self.get_min()
 
         # swap the root with the last element in the heap
@@ -148,7 +148,7 @@ class MinHeap:
     def heap_sort(self):
         # swap the root with the last element in the heap
         for i in range(self.heap_size):
-            max_item = self.poll()
+            max_item = self.heappop()
             print(max_item)
 
 if __name__ == '__main__':
