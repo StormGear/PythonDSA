@@ -1,6 +1,7 @@
 
 
-# Geberate a set of valid parenthesis 
+# Generate a set of valid parenthesis 
+# 
 class Solution:
     def generateParentheses(self, n: int) -> int:
         stack = []
@@ -12,11 +13,13 @@ class Solution:
                 res.append("".join(stack))
                 return
 
+            # Add open parentheses if open count < n
             if opened_count < n:
                 stack.append("(")
                 backtrack(opened_count + 1, closed_count)
                 stack.pop()
 
+            # Add close parentheses if closed count < open count
             if closed_count < opened_count:
                 stack.append(")")
                 backtrack(opened_count, closed_count + 1)
@@ -30,4 +33,5 @@ class Solution:
 # Space complexity: O(n)
 if __name__ == '__main__':
     soln = Solution()
-    print(soln.generateParentheses(2))  # ['((()))', '(()())', '(())()', '()(())', '()()()']
+    print(soln.generateParentheses(3))  # ['((()))', '(()())', '(())()', '()(())', '()()()']
+    print(soln.generateParentheses(2))
