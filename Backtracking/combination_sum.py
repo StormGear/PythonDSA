@@ -5,7 +5,7 @@ class Solution:
     def combinationSum(self, nums: list[int], target: int) -> list[list[int]]:
         res = []
 
-        def dfs(i, curr, total):
+        def dfs(i, curr: list[int], total):
             if total == target:
                 res.append(curr.copy())
                 return
