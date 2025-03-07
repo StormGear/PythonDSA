@@ -19,12 +19,12 @@ class NQueens:
             if self.board[row][c]:
                 return False
 
-        # Check if there is a queen in the same diagonal (bottom-right to top-left)
+        # Check if there is a queen in the same diagonal (bottom-right to top-left) (leading diagonal)
         for r, c in zip(range(row, -1, -1), range(col, -1, -1)):
             if self.board[r][c]:
                 return False
 
-        # Check if there is a queen in the same diagonal  (bottom-left to top-right)
+        # Check if there is a queen in the same diagonal  (bottom-left to top-right) (trailing diagonal)
         for r, c in zip(range(row, -1, -1), range(col, self.n)):
             if self.board[r][c]:
                 return False

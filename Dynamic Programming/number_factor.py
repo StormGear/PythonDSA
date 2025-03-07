@@ -36,12 +36,10 @@ def number_factor_cache_stats():
 def number_factor_bottom_up(n: int) -> int:
     if n < 0:
         return 0
-    dp = [0] * (n + 1)
-    dp[0] = dp[1] = dp[2] = 1
-    dp[3] = 2
+    dp = [1,1,1,2]
     
     for i in range(4, n + 1):
-        dp[i] = dp[i-1] + dp[i-3] + dp[i-4]
+        dp.append(dp[i-1] + dp[i-3] + dp[i-4])
     
     return dp[n]
 

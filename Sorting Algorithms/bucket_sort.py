@@ -61,4 +61,3 @@ arr2 = [0.43, 0.33, 0.23 ,0.52, 0.25, 0.47, 0.51]
 bucket_sort(arr)
 bucket_sort2(arr2)
 print(arr)
-print(arr2)
