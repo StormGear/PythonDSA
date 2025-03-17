@@ -52,4 +52,4 @@ if __name__ == "__main__":
     edges = [[0,1,10], [0,2,3], [2,1,4], [2,3,8], [2,4,2], [1,3,2], [3,4,5]]
     src = 0
     s = Solution()
-    print(s.djikstra2(n, edges, src))
+    print(s.djikstra(n, edges, src))

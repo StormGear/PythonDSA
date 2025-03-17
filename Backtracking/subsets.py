@@ -10,10 +10,12 @@ class Solution:
 
             # include this value in the path
             subset.append(nums[i])
-            dfs(i+1) # move to the next
-
+            # move to the next
+            dfs(i+1) 
             # exclude this value in the path
             subset.pop()
+
+            # move to the next
             dfs(i+1) 
 
         dfs(0)
@@ -22,4 +24,4 @@ class Solution:
 
 if __name__ == '__main__':
     soln = Solution()
-    soln.subsets([1,2,3])
+    print(soln.subsets([1,2,3]))

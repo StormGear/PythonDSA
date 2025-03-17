@@ -22,6 +22,7 @@ class Solution:
                 if dist[u] != float('inf') and dist[u] + w < dist[v]:
                     dist[v] = dist[u] + w
 
+        # Relaxation step to detect negative cycles
         for u, v, w in edges:
             if dist[u] != float('inf') and dist[u] + w < dist[v]:
                 print('Graph contains negative cycles')

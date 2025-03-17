@@ -16,8 +16,6 @@ def house_robber2(houses):
         return 0
     if len(houses) == 1:
         return houses[0]
-    if len(houses) == 2:
-        return max(houses[0], houses[1])
     
     # Initialize dp array
     dp = [0] * len(houses)
