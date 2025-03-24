@@ -2,7 +2,6 @@ class NQueens:
     def __init__(self, n: int):
         self.n = n
         self.board = [[0 for _ in range(n)] for _ in range(n)]
-        self.res = []
 
     def print_queens(self):
         for r in range(self.n):
@@ -50,11 +49,63 @@ class NQueens:
             return False
         self.print_queens()
         return True
+
+
+class Solution:
+    def solveNQueens(self, n: int) -> list[list[str]]:
+        res = []
+        board = [["."] * n for _ in range(n)]
+
+        # define sets to keep track of used cols, positive and negative diagonal
+        col = set()
+        pos_diag = set()
+        neg_diag = set()
+
+        def backtrack(row):
+            if row == n:
+                copy = ["".join(row) for row in board]
+                res.append(copy)
+                return
+
+            for c in range(n):
+                if c in col or (row+c) in pos_diag or (row-c) in neg_diag:
+                    continue
+
+                col.add(c)
+                pos_diag.add(row+c)
+                neg_diag.add(row-c)
+                board[row][c] = "Q"
+                backtrack(row+1)
+
+                col.remove(c)
+                pos_diag.remove(row+c)
+                neg_diag.remove(row-c)
+                board[row][c] = "."
+                
+        backtrack(0)
+        return res
+
+    def print_board(self, board):
+        for row in board:
+            for col in row:
+                for char in col:
+                    if char == "Q":
+                        print("Q ", end="")
+                    else:
+                        print("- ", end="")
+                print()
+            print()
+
+        
         
     
     
 
 if __name__ == '__main__':
-    nqueen = NQueens(4)
-    nqueen.solve_nqueens()
+    # nqueen = NQueens(4)
+    # nqueen.solve_nqueens()
+    soln = Solution()
+    solved_board = soln.solveNQueens(4)
+    soln.print_board(solved_board)
+    
         
