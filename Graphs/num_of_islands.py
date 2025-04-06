@@ -1,7 +1,9 @@
 from collections import deque
 
+# Time Complexity: O(n*m) where n is the number of rows and m is the number of columns
+# Space Complexity: O(n*m) for the visited set
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid: list[list[str]]) -> int:
         # base case
         if not grid:
             return 0

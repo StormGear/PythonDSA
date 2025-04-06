@@ -49,5 +49,6 @@ if __name__ == "__main__":
     print(word_dict.search("bad"))
     print(word_dict.search(".ad"))
     print(word_dict.search("b.."))
+    print(word_dict.search("b.b"))
     
     
