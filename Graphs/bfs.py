@@ -1,5 +1,7 @@
 # Breadth First Search
 
+from collections import deque
+
 class Node:
     def __init__(self, data) -> None:
         self.data = data
@@ -10,11 +12,11 @@ class BreadthFirstSearch:
     # O(V+E), V:vertices/nodes and E:edges
     # space: O(n)
     def bfs(self, startNode):
-        queue = [startNode]
+        queue = deque([startNode])
         startNode.visited = True
 
         while queue:
-            actual_node = queue.pop(0)
+            actual_node = queue.popleft()
             # process this node
             print(actual_node.data, end=" ")
 
