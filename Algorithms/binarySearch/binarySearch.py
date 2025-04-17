@@ -1,6 +1,6 @@
 
 # Template #1 for binary search
-def binarySearch(nums: list[int], target: int):
+def binarySearch1(nums: list[int], target: int):
     """
     The binarySearch function takes a sorted list of integers and a target integer as input, and returns
     the index of the target integer in the list if it exists, otherwise it returns -1.
@@ -18,7 +18,7 @@ def binarySearch(nums: list[int], target: int):
 
     left, right = 0, len(nums) - 1
     while left <= right:
-        mid = (left + right) // 2
+        mid = left + (right - left) // 2 # to prevent overflow
         if nums[mid] == target:
             return mid
         elif nums[mid] < target:
@@ -30,7 +30,7 @@ def binarySearch(nums: list[int], target: int):
     return -1
 
 # Template #2
-def binarySearch(nums, target):
+def binarySearch2(nums, target):
     """
     :type nums: List[int]
     :type target: int
@@ -57,7 +57,7 @@ def binarySearch(nums, target):
 
 
 # Template #3 
-def binarySearch(nums, target):
+def binarySearch3(nums, target):
     """
     :type nums: List[int]
     :type target: int
@@ -81,3 +81,13 @@ def binarySearch(nums, target):
     if nums[left] == target: return left
     if nums[right] == target: return right
     return -1
+
+
+if __name__ == '__main__':
+    nums = [1, 2, 3, 4, 5]
+    target = 7
+    result = binarySearch1(nums, target)
+    if result != -1:
+        print(f"Element found at index {result}")
+    else:
+        print("Element not found in the list")

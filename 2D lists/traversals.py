@@ -45,12 +45,17 @@ class two_d_lists:
 
 if __name__ == '__main__':
     matrix = [[1, 2], [3, 4], [5, 6]]
+    sq_matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     obj = two_d_lists(matrix)
+    obj2 = two_d_lists(sq_matrix)
     print('Row Traversal:')
     obj.row_traversal()
     print('Column Traversal:')
     obj.column_traversal()
     print('Diagonal Traversal:')
-    obj.diagonal_traversal()
+    # obj.diagonal_traversal()
+    obj2.diagonal_traversal()
     print('Reverse Diagonal Traversal:')
-    obj.reverse_diagonal_traversal()
+    # obj.reverse_diagonal_traversal()
+    obj2.reverse_diagonal_traversal()
+    
