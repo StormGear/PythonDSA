@@ -1,8 +1,9 @@
 class Solution:
+    """
+    Problem: [link](https://neetcode.io/problems/combinations-of-a-phone-number)
+    """
     def letter_combinations(self, digits: str) -> list[str]:
         res = []
-          
-
         phone = {
             '2': 'abc',
             '3': 'def',
@@ -25,5 +26,9 @@ class Solution:
         if digits:
             backtrack(0, '')
         return res
+    
+if __name__ == "__main__":
+    digits = "34"
+    print(Solution().letter_combinations(digits))
         
                 

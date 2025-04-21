@@ -15,4 +15,4 @@ if __name__ == '__main__':
     res = soln.groupAnagrams(["act","pots","tops","cat","stop","hat"])
     print(res)
 
-# Output: [["hat"],["act", "cat"],["stop", "pots", "tops"]]
+# Output: [["act", "cat"],["stop", "pots", "tops"], ["hat"]]

@@ -1,6 +1,8 @@
 class Solution:
     def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
-
+        """
+        Problem: [link](https://neetcode.io/problems/search-in-2d-matrix)
+        """
         for row in range(len(matrix)):
             curr = matrix[row]
             l, r = 0, len(matrix[row]) - 1

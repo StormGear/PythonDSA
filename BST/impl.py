@@ -75,6 +75,10 @@ def postOrder(root):
         return []
     return postOrder(root.left) + postOrder(root.right) + [root.info]
 
+def preOrder(root):
+    if not root:
+        return []
+    return [root.info] + preOrder(root.left) + preOrder(root.right)
 
 
 if __name__=="__main__":

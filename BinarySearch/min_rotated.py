@@ -1,5 +1,8 @@
 # Problem minimum rotated sorted array
 class Solution:
+    """
+    Problem: [link](https://neetcode.io/problems/find-minimum-in-rotated-sorted-array)
+    """
     def min_rotated_brute(self, nums: list[int]) -> int:
         res = nums[0]
 
@@ -40,6 +43,7 @@ class Solution:
                 r = m 
         print('pivot:', l, 'value:', nums[l], 'r:', r, 'value:', nums[r], 'm:', m)
         return nums[l]
+    
 if __name__ == '__main__':
     soln = Solution()
     # print(soln.min_rotated_brute([3,4,5,6,1,2]))

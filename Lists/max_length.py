@@ -18,7 +18,7 @@ def text_message(message: str, max_length: int) -> list:
     return res
 
 if __name__ == '__main__':
-    message = "The quick brown fox jumps"
+    message = "The quick brown fox jumps over the lazy dog"
     max_length = 10
-    print(text_message(message, max_length))  # Output: ['Hello, how', 'are you', 'doing', 'today?']
+    print(text_message(message, max_length))  # Output: ['The quick', 'brown fox', 'jumps']
     

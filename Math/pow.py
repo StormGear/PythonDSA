@@ -2,7 +2,7 @@ def power(x, n):
     result = 1
     negative = n < 0
     n = abs(n)
-
+    
     for _ in range(n):
         result *= x
 

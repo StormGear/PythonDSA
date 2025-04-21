@@ -2,7 +2,11 @@
 
 # Include a number on one branch and exclude it on another branch
 # Combination Sum
+
 class Solution:
+    """
+    Problem: [link](https://neetcode.io/problems/combination-target-sum)
+    """
     def combinationSum(self, nums: list[int], target: int) -> list[list[int]]:
         res = []
 
@@ -15,7 +19,7 @@ class Solution:
 
             # include nums[i]
             curr.append(nums[i])
-            dfs(i, curr, total+nums[i])
+            dfs(i, curr, total+nums[i]) # reuse the same element
             # exclude nums[i]
             curr.pop()
 

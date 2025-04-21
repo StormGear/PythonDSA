@@ -1,4 +1,7 @@
 class Solution:
+    """
+    Problem: [link](https://neetcode.io/problems/palindrome-partitioning)
+    """
     def partition(self, s: str) -> list[list[str]]:
         """
         Given a string `s`, partition `s` such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of `s`.

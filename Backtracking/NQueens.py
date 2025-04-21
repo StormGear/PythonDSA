@@ -52,6 +52,9 @@ class NQueens:
 
 
 class Solution:
+    """
+    Problem: [Link](https://neetcode.io/problems/n-queens)
+    """
     def solveNQueens(self, n: int) -> list[list[str]]:
         res = []
         board = [["."] * n for _ in range(n)]

@@ -1,6 +1,9 @@
 from math import ceil
 
 class Solution:
+    """
+    Problem: [link](https://neetcode.io/problems/eating-bananas)
+    """
     def minEatingSpeed(self, piles: list[int], h: int) -> int:
         high = max(piles)
         res = 0

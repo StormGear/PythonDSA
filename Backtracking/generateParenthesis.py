@@ -3,6 +3,9 @@
 # Generate a set of valid parenthesis 
 # 
 class Solution:
+    """
+    Problem: [link](https://neetcode.io/problems/generate-parentheses)
+    """
     def generateParentheses(self, n: int) -> int:
         stack = []
         res = []

@@ -1,6 +1,9 @@
 # Combination Sum II
 
 class Solution:
+    """
+    Problem: [link](https://neetcode.io/problems/combination-target-sum-ii)
+    """
     def combination_sum_ii(self, candidates: list[int], target: int) -> list[list[int]]:
         res = []
         candidates.sort()
@@ -17,7 +20,7 @@ class Solution:
             if total == target:
                 res.append(curr.copy())
                 return
-            if total > target or i == len(candidates):
+            if total > target or i >= len(candidates):
                 return
             
             # include current element
