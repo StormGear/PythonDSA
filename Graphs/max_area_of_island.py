@@ -35,6 +35,15 @@ if __name__=='__main__':
         [0,1,1,0,1],
         [0,1,0,0,1]
         ]
+    farm = [
+        [0,1,1,0,1],
+        [1,1,0,1,0],
+        [0,1,1,1,0],
+        [1,1,1,1,0],
+        [1,1,1,1,1],
+        [0,0,0,0,0]
+    ]
+    print(soln.maxAreaOfIsland(farm))
     print(soln.maxAreaOfIsland(grid))
     
 
