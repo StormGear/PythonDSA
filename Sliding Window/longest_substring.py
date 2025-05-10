@@ -32,6 +32,7 @@ class Solution:
 # Space complexity: O(n)
 if __name__ == "__main__":
     s = Solution()
+    print(s.lengthOfLongestSubstring("zxyzxyz")) # 3
     print(s.lengthOfLongestSubstring("abcabcbb")) # 3
     print(s.lengthOfLongestSubstring("bbbbb")) # 1
     print(s.lengthOfLongestSubstring2("pwwwkew")) # 3

@@ -31,7 +31,9 @@ class Solution:
     
 if __name__ == "__main__":
     prices = [7, 1, 5, 3, 6, 4]
+    prices_2 = [10,1,5,6,7,1]
     s = Solution()
     print(s.maxProfit(prices))
+    print(s.maxProfit(prices_2))
 
 # Think of it this way

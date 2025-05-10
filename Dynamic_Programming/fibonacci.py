@@ -12,16 +12,16 @@ def fibonacci1(n):
 
 # Fibonacci sequence with an iterative approach or tabulation
 def fibonacci2(n):
-    arr = [0, 1] + [1] * (n-1) # 3. Initialization: Initialize the base case(s) of your DP array. ||  # 1. Define the State
+    dp = [0, 1] + [1] * (n-1) # 3. Initialization: Initialize the base case(s) of your DP array. ||  # 1. Define the State
     if n <= 0:
-        return arr[0]
+        return dp[0]
     if n == 1:
-        return arr[1]
+        return dp[1]
     else:
         for i in range(2, n+1): # 4. Iterative Computation
-            arr[i] = arr[i-1] + arr[i-2] # 2. Recurrence Relation
+            dp[i] = dp[i-1] + dp[i-2] # 2. Recurrence Relation
             
-    return arr[n] # 5. Extract Solution
+    return dp[n] # 5. Extract Solution
 
 # fibonacci sequence with memoization
 def fibonacci3(n, memo={}):

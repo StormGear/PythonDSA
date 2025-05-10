@@ -26,7 +26,6 @@ class Solution:
  
 
         for index, ele in enumerate(nums):
-           
             # If the current element is positive, any triplet including it will have a positive sum
             if ele > 0:
                 break
@@ -34,7 +33,6 @@ class Solution:
             # avoid duplicates for the first element in the three sum
             if index > 0 and ele == nums[index - 1]:
                 continue
-       
 
             l, r = index + 1, len(nums) - 1
             while l < r:
@@ -45,11 +43,13 @@ class Solution:
                     l += 1
                 else:
                     res.append([ele, nums[l], nums[r]])
+                    # res.append([index, l, r])
                     l += 1
                     r -= 1
                     # avoid duplicates
                     while nums[l] == nums[l - 1] and l < r:
                         l += 1  
+
         return res
     
 if __name__ == "__main__":

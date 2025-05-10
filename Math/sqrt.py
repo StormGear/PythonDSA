@@ -4,7 +4,7 @@ def calculate_sqrt(number, tolerance=1e-10):
     if number == 0:
         return 0
     guess = number / 2.0
-    while abs(guess * guess - number) > tolerance:
+    while abs(guess ** 2 - number) > tolerance:
         guess = (guess + number / guess) / 2.0
     return guess
 
