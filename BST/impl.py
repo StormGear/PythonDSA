@@ -1,12 +1,12 @@
 class Node:
-    def __init__(self, info): 
-        self.info = info  
+    def __init__(self, data): 
+        self.data = data  
         self.left = None  
         self.right = None 
         self.level = None 
 
     def __str__(self):
-        return str(self.info) 
+        return str(self.data) 
 
 class BinarySearchTree:
     def __init__(self): 
@@ -19,13 +19,13 @@ class BinarySearchTree:
             current = self.root
          
             while True:
-                if val < current.info:
+                if val < current.data:
                     if current.left:
                         current = current.left
                     else:
                         current.left = Node(val)
                         break
-                elif val > current.info:
+                elif val > current.data:
                     if current.right:
                         current = current.right
                     else:
@@ -34,8 +34,35 @@ class BinarySearchTree:
                 else:
                     break
 
+
+def search(node: Node, target: int) -> Node | None:
+    if node is None:
+        return None 
+    elif node.data == target:
+        return node
+    elif target < node.data:
+        return search(node.left, target) # search left subtree
+    else:
+        return search(node.right, target) # search right subtree
+    
+def insert(node: Node, data: int):
+    if node is None:
+        return Node(data)
+    else:
+        if data < node.data:
+            node.left = insert(node.left, data)
+        elif data > node.data:
+            node.right = insert(node.right, data)
+    return node # return the same node if data == current_node.data
+
+def minValueNode(node: Node):
+    # move as far left as possible to find the minimum number
+    current = node
+    while current.left is not None:
+        current = current.left
+    return current
+
 def preOrder(root):
-    #Write your code here
     res = []
     def _preOrder(root):
         if root:
